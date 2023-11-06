@@ -13,6 +13,9 @@ public class Main {
         mapAtletas.put("Neymar", "Futebol,95");
         mapAtletas.put("Stephen Curry", "Basquete,92");
         mapAtletas.put("Canelo Alvarez", "Boxe,90");
+        mapAtletas.put("Igoudala", "Basquete,80");
+        mapAtletas.put("Cassius Kley", "Boxe,110");
+        mapAtletas.put("Jaqueline", "Volei,97");
 
         // Criar um mapa para armazenar a soma das pontuações por esporte e a contagem de atletas por esporte
         Map<String, Integer> somaPorEsporte = new HashMap<>();
