@@ -3,7 +3,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-public class Main {
+public class TesteHashMap {
     public static void main(String[] args) {
     	
     	//DESCRICAO DO PROBLEMA
