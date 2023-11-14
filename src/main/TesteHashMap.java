@@ -25,8 +25,8 @@ public class TesteHashMap {
 
         // 1. Criar um mapa para armazenar a soma das pontuações por esporte 
         //e outro para a contagem de atletas por esporte
-        Map<String, Integer> somaPorEsporte = new HashMap<>();
-        Map<String, Integer> contagemPorEsporte = new HashMap();
+        Map<String, Integer> somaTotalPorEsporte = new HashMap<>();
+        Map<String, Integer> numeroDeOcorrenciasDeCadaEsporte = new HashMap();
 
         //2. separando as partes do value de cada mapAtletas
         mapAtletas.forEach((nome, info) -> {
@@ -42,25 +42,25 @@ public class TesteHashMap {
                 int pontuacao = Integer.parseInt(partes[1]);
 
                 // 3. atualizar a soma das pontuações por esporte
-                somaPorEsporte.put(esporte, somaPorEsporte.getOrDefault(esporte, 0) + pontuacao);
+                somaTotalPorEsporte.put(esporte, somaTotalPorEsporte.getOrDefault(esporte, 0) + pontuacao);
 
                 // 4. Atualizar a contagem de frequencia de cada esporte
-                contagemPorEsporte.put(esporte, contagemPorEsporte.getOrDefault(esporte, 0) + 1);
+                numeroDeOcorrenciasDeCadaEsporte.put(esporte, numeroDeOcorrenciasDeCadaEsporte.getOrDefault(esporte, 0) + 1);
             }
         });
         
         //I- Exibir a soma total por esporte
         System.out.println("Soma total de pontuações por esporte:");
-        for (Map.Entry<String, Integer> entry : somaPorEsporte.entrySet()) {
+        for (Map.Entry<String, Integer> entry : somaTotalPorEsporte.entrySet()) {
             System.out.println(entry.getKey() + ": " + entry.getValue());
         }
         
 
         //5. Calcular a média de pontuações por esporte
         Map<String, Double> mediaPorEsporte = new HashMap<>();
-        for (String esporte : somaPorEsporte.keySet()) {
-            int soma = somaPorEsporte.get(esporte);
-            int contagem = contagemPorEsporte.get(esporte);
+        for (String esporte : somaTotalPorEsporte.keySet()) {
+            int soma = somaTotalPorEsporte.get(esporte);
+            int contagem = numeroDeOcorrenciasDeCadaEsporte.get(esporte);
             double media = (double) soma / contagem;
             mediaPorEsporte.put(esporte, media);
         }
